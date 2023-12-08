@@ -6,7 +6,7 @@ import Calculator from '../Components/Calculator/Calculator';
 const Layout = () => {
     return (
         <main className='bg-cyan-100' >
-            <section className='min-h-screen pt-20 space-y-14'>
+            <section className='min-h-screen pt-20 space-y-10'>
                 <Header />
                 <Calculator />
             </section>
