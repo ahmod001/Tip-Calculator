@@ -12,9 +12,11 @@ const Calculator = () => {
 
     const bill = useRef('');
     const numberOfPeople = useRef('');
+    const customTip = useRef('');
 
     const [tipAmount, setTipAmount] = useState(0);
     const [total, setTotal] = useState(0);
+
 
     const handleTip = (e) => {
         const totalBill = bill.current.value
@@ -69,7 +71,8 @@ const Calculator = () => {
     const handleReset = () => {
         bill.current.value = '';
         numberOfPeople.current.value = '';
-
+        customTip.current.value='';
+        
         setTipAmount(0)
         setTotal(0)
     }
@@ -100,7 +103,10 @@ const Calculator = () => {
                             ))}
 
                             {/* Custom Tip */}
-                            <SmallInputField name={'Custom'} handleTip={handleTip} />
+                            <SmallInputField
+                                refName={customTip}
+                                name={'Custom'}
+                                handleTip={handleTip} />
                         </div>
                     </div>
 
