@@ -71,8 +71,8 @@ const Calculator = () => {
     const handleReset = () => {
         bill.current.value = '';
         numberOfPeople.current.value = '';
-        customTip.current.value='';
-        
+        customTip.current.value = '';
+
         setTipAmount(0)
         setTotal(0)
     }
@@ -131,7 +131,7 @@ const Calculator = () => {
                             </h1>
 
                             <h1 className={`${tipAmount.length <= 7 ? ('lg:text-5xl text-4xl') : ('lg:text-4xl text-3xl')} font-semibold inline-flex items-center space-x-1 text-cyan-300`}>
-                                <span className='text-3xl'>$</span> <span>{tipAmount > 9 ? (tipAmount.slice(0, 10) + '+') : (tipAmount)}</span>
+                                <span className='text-3xl'>$</span> <span>{tipAmount.length > 8 ? (`${tipAmount.slice(0, 8)}+`) : (tipAmount)}</span>
                             </h1>
                         </div>
 
@@ -145,7 +145,7 @@ const Calculator = () => {
                             </h1>
 
                             <h1 className={`${total.length <= 7 ? ('lg:text-5xl text-4xl') : ('lg:text-4xl text-3xl')} font-semibold inline-flex items-center space-x-1 text-cyan-300`}>
-                                <span className='text-3xl'>$</span> <span>{total > 9 ? (total.slice(0, 10) + '+') : (total)}</span>
+                                <span className='text-3xl'>$</span> <span>{total.length > 8 ? (total.slice(0, 8) + '+') : (total)}</span>
                             </h1>
                         </div>
                     </div>
